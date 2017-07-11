@@ -3,6 +3,3 @@ deployment:
     branch: master
     commands:
       - ./deploy_dev.sh
-test:
-override:
-- echo 'Doesn't support dotnet'
