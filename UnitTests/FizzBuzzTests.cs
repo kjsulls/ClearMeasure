@@ -26,10 +26,21 @@ namespace UnitTests
             
             var results = fb.Run(input).ToList();
 
+            var returnedExpectedIndexes = new List<int>();
+            for (var i = 0; i < results.Count; i++)
+            {
+                if (results[i] == expectedOutput)
+                    returnedExpectedIndexes.Add(i + 1);
+            }
+            
+            // Check indexes are equal
+            CollectionAssert.AreEqual(expectedIndexes, returnedExpectedIndexes);
+
+            // Check output at each index
             foreach (var index in expectedIndexes)
             {
                 Assert.AreEqual(results[index - 1], expectedOutput);
-            }            
+            }
         }
 
         [Ignore("Takes too  long to run.")] 
