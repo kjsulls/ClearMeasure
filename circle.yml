@@ -3,7 +3,6 @@ deployment:
     branch: master
     commands:
       - ./deploy_dev.sh
-	  
 test:
   override:
     - dotnet test
